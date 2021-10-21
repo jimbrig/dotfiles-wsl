@@ -1,0 +1,9 @@
+Host *
+    AddKeysToAgent yes
+    IdentityAgent SSH_AUTH_SOCK
+    UserKnownHostsFile ~/.config/ssh/known_hosts
+
+Host github github.com
+    HostName github.com
+    IdentityFile ~/.config/ssh/id_rsa
+    User git

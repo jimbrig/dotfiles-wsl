@@ -1,0 +1,26 @@
+[user]
+	email = jimmy.briggs@jimbrig.com
+	name = Jimmy Briggs
+	signingkey = B8BA217A94B30E9D25FE01F601163DF4AE4BA708
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+    template = ~/.config/git/.gitmessage
+[color]
+	ui = auto
+[default]
+	protocol = ssh
+[gpg]
+	program = gpg
+[tag]
+	forceSignAnnotated = true
+[core]
+    excludesfile = ~/.config/git/.gitignore
+    attributesfile = ~/.config/git/.gitattributes
+[github]
+    user = jimbrig
+[pull]
+    rebase = true
+[push]
+    default = current

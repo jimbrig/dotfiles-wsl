@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Custom Aliases and Functions
+
+# update system
+sudoup() {
+    sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y autoremove
+}
+
+# Windows Programs
+alias explorer='explorer.exe'
+alias expl='explorer'
+alias notepad='notepad.exe'
+alias clip='clip.exe'
+
+# Display
+alias ls='ls --color=auto'
+
+# GPG
+get_gpgkey() {
+    gpg -K | awk "NR==4 {print $1}" | sed "s/4096R\///g"
+}
+alias mygpg='gpg --list-secret-keys --keyid-format=LONG jimmy.briggs@jimbrig.com'
+

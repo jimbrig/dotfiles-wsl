@@ -1,0 +1,98 @@
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+
+# Load Environment Variables:
+[ -f ~/.config/sh/environ ] && . ~/.config/sh/environ
+
+# Tell the Shell used by default.
+# export SHELL=${SHELL:-/bin/bash}
+
+# Path to the oh-my-zsh configuration.
+export ZSH=$XDG_CONFIG_HOME/oh-my-zsh
+
+# Create the XDG folders if it's not done yet.
+test -d "$XDG_BIN_HOME"    || mkdir -p -m 0700 "$XDG_BIN_HOME"
+test -d "$XDG_CACHE_HOME"  || mkdir -p -m 0700 "$XDG_CACHE_HOME"
+test -d "$XDG_CONFIG_HOME" || mkdir -p -m 0700 "$XDG_CONFIG_HOME"
+test -d "$XDG_DATA_HOME"   || mkdir -p -m 0700 "$XDG_DATA_HOME"
+test -d "$XDG_LIB_HOME"    || mkdir -p -m 0700 "$XDG_LIB_HOME"
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$XDG_CONFIG_HOME/bash/.bashrc" ]; then
+	. "$XDG_CONFIG_HOME/bash/.bashrc"
+    fi
+fi
+
+# Windows EnvVars and PATHs
+# github_pat=$(gh config get github_token)
+export GITHUB_PAT="$github_pat"
+export WINHOME="/mnt/c/users/jimmy"
+# export PATH="/mnt/c/bin":"/mnt/c/users/jimmy/bin":"/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Microsoft VS Code Insiders/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/OpenSSH:$PATH"
+
+# Homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# NVM
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# fix shell/terminal keys and interaction
+case "${TERM}" in
+  cons25*|linux) # plain BSD/Linux console
+    bindkey '\e[H'    beginning-of-line   # home 
+    bindkey '\e[F'    end-of-line         # end  
+    bindkey '\e[5~'   delete-char         # delete
+    bindkey '[D'      emacs-backward-word # esc left
+    bindkey '[C'      emacs-forward-word  # esc right
+    ;;
+  *rxvt*) # rxvt derivatives
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\eOc'    forward-word        # ctrl right
+    bindkey '\eOd'    backward-word       # ctrl left
+    # workaround for screen + urxvt
+    bindkey '\e[7~'   beginning-of-line   # home
+    bindkey '\e[8~'   end-of-line         # end
+    bindkey '^[[1~'   beginning-of-line   # home
+    bindkey '^[[4~'   end-of-line         # end
+    ;;
+  *xterm*) # xterm derivatives
+    bindkey '\e[H'    beginning-of-line   # home
+    bindkey '\e[F'    end-of-line         # end
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\e[1;5C' forward-word        # ctrl right
+    bindkey '\e[1;5D' backward-word       # ctrl left
+    # workaround for screen + xterm
+    bindkey '\e[1~'   beginning-of-line   # home
+    bindkey '\e[4~'   end-of-line         # end
+    ;;
+  screen)
+    bindkey '^[[1~'   beginning-of-line   # home
+    bindkey '^[[4~'   end-of-line         # end
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\eOc'    forward-word        # ctrl right
+    bindkey '\eOd'    backward-word       # ctrl left
+    bindkey '^[[1;5C' forward-word        # ctrl right
+    bindkey '^[[1;5D' backward-word       # ctrl left
+    ;;
+esac
+
+
+# set PATH so it includes user's private bin if it exists
+#if [ -d "$HOME/bin" ] ; then
+#    PATH="$HOME/bin:$PATH"
+#fi
+
+# set PATH so it includes user's private bin if it exists
+#if [ -d "$HOME/.local/bin" ] ; then
+#    PATH="$HOME/.local/bin:$PATH"
+#fi

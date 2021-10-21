@@ -9,5 +9,5 @@
 /gnupg/.gnupg/*.kbx filter=git-crypt diff=git-crypt
 /gnupg/.gnupg/*.asc filter=git-crypt diff=git-crypt
 /gnupg/.gnupg/*.key filter=git-crypt diff=git-crypt
-/gnupg/.gnupg/*.rev filter=git-crypt diff=git-crypt
+/gnupg/.gnupg/**.rev filter=git-crypt diff=git-crypt
 /gnupg/.gnupg/*.gpg filter=git-crypt diff=git-crypt

@@ -57,7 +57,7 @@ unsetopt flow_control         # Output flow control via start/stop characters is
 unsetopt hist_beep            # No bell on error in history.
 unsetopt hup                  # No hup signal at shell exit.
 
-plugins=(colorize git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+plugins=(colorize git docker zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 . ~/.config/oh-my-zsh/oh-my-zsh.sh
 
@@ -70,6 +70,9 @@ if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
 fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+
+# Todoist CLI
+source $(brew --prefix)/share/zsh/site-functions/_todoist_peco
 
 # Add only functional commands to the history.
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }

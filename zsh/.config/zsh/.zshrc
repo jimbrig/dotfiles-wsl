@@ -1,3 +1,6 @@
+#autoload -U compinit
+#compinit -i
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -54,7 +57,7 @@ unsetopt flow_control         # Output flow control via start/stop characters is
 unsetopt hist_beep            # No bell on error in history.
 unsetopt hup                  # No hup signal at shell exit.
 
-plugins=(colorize git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+plugins=(colorize git docker zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 . ~/.config/oh-my-zsh/oh-my-zsh.sh
 
@@ -68,11 +71,12 @@ fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
+# Todoist CLI
+source $(brew --prefix)/share/zsh/site-functions/_todoist_peco
+
 # Add only functional commands to the history.
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
-autoload -U compinit
-compinit -i
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

@@ -12,6 +12,20 @@ alias explorer='explorer.exe'
 alias expl='explorer'
 alias notepad='notepad.exe'
 alias clip='clip.exe'
+alias cmd='cmd.exe'
+alias powershell='powershell.exe'
+alias winver='winver.exe'
+alias wslconfig='wslconfig.exe'
+alias code-win='code.exe'
+alias npm-win='npm.exe'
+alias node-win='node.exe'
+
+# gitkraken
+alias krak=gitkraken
+
+# git-crypt
+alias gcrypt='git-crypt'
+alias gcrypts='git-crypt status -e'
 
 # Display
 alias ls='ls --color=auto'

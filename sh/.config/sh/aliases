@@ -20,6 +20,12 @@ alias code-win='code.exe'
 alias npm-win='npm.exe'
 alias node-win='node.exe'
 
+# gitkraken
+alias krak=gitkraken
+
+# git-crypt
+alias gcrypt='git-crypt'
+alias gcrypts='git-crypt status -e'
 
 # Display
 alias ls='ls --color=auto'

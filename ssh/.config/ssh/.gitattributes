@@ -1,0 +1,2 @@
+id_rsa filter=git-crypt diff=git-crypt
+gitkraken_rsa filter=git-crypt diff=git-crypt

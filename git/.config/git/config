@@ -6,7 +6,7 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
-    template = ~/.config/git/.gitmessage
+    	template = ~/.config/git/.gitmessage
 [color]
 	ui = auto
 [default]
@@ -16,11 +16,11 @@
 [tag]
 	forceSignAnnotated = true
 [core]
-    excludesfile = ~/.config/git/.gitignore
-    attributesfile = ~/.config/git/.gitattributes
+    	excludesfile = ~/.config/git/.gitignore
+    	attributesfile = ~/.config/git/.gitattributes
 [github]
-    user = jimbrig
+    	user = jimbrig
 [pull]
-    rebase = true
+    	rebase = true
 [push]
-    default = current
+    	default = current

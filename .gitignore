@@ -1,3 +1,5 @@
 *random_seed*
 *.rev
 *.zcompdump
+
+gnupg/.gnupg/crls.d/DIR.txt

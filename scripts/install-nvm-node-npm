@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# set config
+XDG_CONFIG_HOME = ~/.config
+
+# install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+# config
+nvm set-colors cgYmW
+
+# install latest node
+nvm install node --latest-npm
+nvm on
+
+npm install -g npm
+

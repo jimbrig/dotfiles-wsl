@@ -1,0 +1,4 @@
+azureProfile.json filter=git-crypt diff=git-crypt
+msal_token_cache.json filter=git-crypt diff=git-crypt
+clouds.config filter=git-crypt diff=git-crypt
+

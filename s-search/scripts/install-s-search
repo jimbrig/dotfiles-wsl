@@ -1,0 +1,4 @@
+#!/bin/bash
+brew install s-search
+s --completion bash > /home/jimbrig/.config/bash/bash_completion.d/s
+s --completion zsh > /home/jimbrig/.config/zsh/zsh_completion/_s

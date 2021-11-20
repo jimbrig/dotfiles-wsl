@@ -1,5 +1,8 @@
-#autoload -U compinit
-#compinit -i
+#!/bin/zsh
+# Executed by zsh(1) for interactive shells.
+
+autoload -U compinit
+compinit -i
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -8,12 +11,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#!/bin/zsh
-# Executed by zsh(1) for interactive shells.
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 [ -f "$XDG_CONFIG_HOME/sh/aliases" ] && . "$XDG_CONFIG_HOME/sh/aliases"
+[ -f "$XDG_CONFIG_HOME/zsh/zsh_completions/_gh" ] && . "$XDG_CONFIG_HOME/zsh/zsh_completions/_gh"
+[ -f "$XDG_CONFIG_HOME/zsh/zsh_completions/_s" ] && . "$XDG_CONFIG_HOME/zsh/zsh_completions/_s"
 
 export HISTFILE="$XDG_CACHE_HOME/zsh/zsh_history"
 
@@ -77,6 +79,8 @@ source $(brew --prefix)/share/zsh/site-functions/_todoist_peco
 # Add only functional commands to the history.
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
+# remove any duplicated PATH entries
+typeset -U PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

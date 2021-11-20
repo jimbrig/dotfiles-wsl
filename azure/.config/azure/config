@@ -1,0 +1,5 @@
+[cloud]
+name = AzureCloud
+
+[auto-upgrade]
+enable = yes

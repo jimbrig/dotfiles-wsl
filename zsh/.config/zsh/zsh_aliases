@@ -1,0 +1,7 @@
+#!/bin/bash
+# zsh shell aliases
+
+alias sgh="s -p github"
+alias sghr="s -p ghr"
+alias viewpath="echo $PATH | sed 's/:/\n/g' | sort | uniq -c"
+alias viewenviron="cat /etc/environment"

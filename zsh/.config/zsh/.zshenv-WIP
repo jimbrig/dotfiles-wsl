@@ -1,0 +1,98 @@
+#!/bin/zsh
+#
+# Executed by zsh(1) for login shells.
+
+#-----------------------------
+# Export Environment Variables
+#-----------------------------
+
+# DOTDIR
+export DOTDIR="$HOME\.dotfiles"
+
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
+export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
+
+# EDITOR
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# ZSH
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export HISTFILE="$ZDOTDIR/.zhistory"
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+# Git
+export GIT_REVIEW_BASE=main
+
+# NPM
+export NPM_PATH="$XDG_CONFIG_HOME/node_modules"
+export NPM_BIN="$XDG_CONFIG_HOME/node_modules/bin"
+export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/node_modules"
+
+# -------
+# PATH
+# -------
+
+# WINDOWS 
+export WINHOME="/mnt/c/users/jimmy"
+
+# Note: Excluding Windows %PATH% in '/etc/wsl.conf'
+export PATH="$PATH:/mnt/c/Windows:/mnt/c/Windows/system32:/mnt/c/Windows/System32/Wbem"
+export PATH="$PATH:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Microsoft VS Code Insiders/bin:$PATH"
+
+# CARGO
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+[ -f ~/.config/sh/profile ] && . ~/.config/sh/profile
+
+# Add .cargo to $PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.cargo/env"
+
+# Windows EnvVars and PATHs:
+github_pat=$(gh config get github_token)
+
+
+# Fix Shell keys interactions:
+case "${TERM}" in
+  cons25*|linux) # plain BSD/Linux console
+    bindkey '\e[H'    beginning-of-line   # home 
+    bindkey '\e[F'    end-of-line         # end  
+    bindkey '\e[5~'   delete-char         # delete
+    bindkey '[D'      emacs-backward-word # esc left
+    bindkey '[C'      emacs-forward-word  # esc right
+    ;;
+  *rxvt*) # rxvt derivatives
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\eOc'    forward-word        # ctrl right
+    bindkey '\eOd'    backward-word       # ctrl left
+    # workaround for screen + urxvt
+    bindkey '\e[7~'   beginning-of-line   # home
+    bindkey '\e[8~'   end-of-line         # end
+    bindkey '^[[1~'   beginning-of-line   # home
+    bindkey '^[[4~'   end-of-line         # end
+    ;;
+  *xterm*) # xterm derivatives
+    bindkey '\e[H'    beginning-of-line   # home
+    bindkey '\e[F'    end-of-line         # end
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\e[1;5C' forward-word        # ctrl right
+    bindkey '\e[1;5D' backward-word       # ctrl left
+    # workaround for screen + xterm
+    bindkey '\e[1~'   beginning-of-line   # home
+    bindkey '\e[4~'   end-of-line         # end
+    ;;
+  screen)
+    bindkey '^[[1~'   beginning-of-line   # home
+    bindkey '^[[4~'   end-of-line         # end
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\eOc'    forward-word        # ctrl right
+    bindkey '\eOd'    backward-word       # ctrl left
+    bindkey '^[[1;5C' forward-word        # ctrl right
+    bindkey '^[[1;5D' backward-word       # ctrl left
+    ;;
+esac
+

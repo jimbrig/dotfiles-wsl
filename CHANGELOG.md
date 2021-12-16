@@ -94,6 +94,9 @@ All notable changes to this project will be documented in this file.
 - Encrypt and update todoist-cli configs
 - Update zsh and aliases configurations
 - Add /etc/apt configurations
+- Add git-cliff configurations
+- Add git-cliff config and create CHANGELOG.md
+- Add git-cliff GH action
 
 ### Refactor
 

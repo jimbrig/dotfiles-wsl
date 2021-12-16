@@ -74,7 +74,7 @@ fi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
 # Todoist CLI
-source $(brew --prefix)/share/zsh/site-functions/_todoist_peco
+source $(brew --prefix)/share/zsh/site-functions/_todoist_fzf
 
 # Add only functional commands to the history.
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
@@ -84,3 +84,4 @@ typeset -U PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+export PATH="$PATH:/opt/mssql-tools/bin"

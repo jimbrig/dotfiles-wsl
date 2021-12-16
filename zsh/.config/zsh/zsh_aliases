@@ -5,3 +5,12 @@ alias sgh="s -p github"
 alias sghr="s -p ghr"
 alias viewpath="echo $PATH | sed 's/:/\n/g' | sort | uniq -c"
 alias viewenviron="cat /etc/environment"
+
+# transfer.sh
+transfer() {
+    curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename "$1") | tee /dev/null;
+    echo
+}
+
+alias transfer=transfer
+

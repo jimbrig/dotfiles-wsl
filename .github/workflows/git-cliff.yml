@@ -1,8 +1,6 @@
 name: Generate CHANGELOG.md
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
 
 jobs:
   changelog:

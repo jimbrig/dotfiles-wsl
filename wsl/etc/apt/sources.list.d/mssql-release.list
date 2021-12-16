@@ -1,0 +1,1 @@
+deb [arch=amd64,armhf,arm64] https://packages.microsoft.com/ubuntu/21.04/prod hirsute main

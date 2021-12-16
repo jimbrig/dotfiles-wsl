@@ -5,15 +5,14 @@ All notable changes to this project will be documented in this file.
 ## Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [[Unreleased]](#unreleased)
   - [Configuration](#configuration)
+- [[1.0.0] - 2021-12-16](#100---2021-12-16)
+  - [Configuration](#configuration-1)
   - [Documentation](#documentation)
   - [Features](#features)
   - [Miscellaneous Tasks](#miscellaneous-tasks)
-  - [Refactor](#refactor)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

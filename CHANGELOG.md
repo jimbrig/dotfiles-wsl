@@ -98,6 +98,10 @@ All notable changes to this project will be documented in this file.
 - Add git-cliff config and create CHANGELOG.md
 - Add git-cliff GH action
 
+### Miscellaneous Tasks
+
+- Autopublish 2021-12-16T04:57:50Z
+
 ### Refactor
 
 - Add shebang and spacing to pwsh script

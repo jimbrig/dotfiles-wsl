@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 *Generated with [DocToc](https://github.com/thlorenz/doctoc)*
-## [1.0.0] - 2021-12-16
+## [Unreleased]
 
 ### Configuration
 
@@ -34,6 +34,7 @@ All notable changes to this project will be documented in this file.
 
 - Add README.md
 - Update README.md
+- Add release to clog
 
 ### Features
 
@@ -105,6 +106,7 @@ All notable changes to this project will be documented in this file.
 - Autopublish 2021-12-16T04:57:50Z
 - Autopublish 2021-12-16T04:58:49Z
 - Autopublish 2021-12-16T05:02:46Z
+- Autopublish 2021-12-16T05:04:38Z
 
 ### Refactor
 

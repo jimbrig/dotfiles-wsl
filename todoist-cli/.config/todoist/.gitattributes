@@ -1,1 +1,2 @@
 .todoist.config.json filter=git-crypt diff=git-crypt
+config.json filter=git-crypt diff=git-crypt

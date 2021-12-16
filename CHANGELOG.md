@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file.
 
 ### Configuration
 
+- Fix Github Actions
+
+## [1.0.0] - 2021-12-16
+
+### Configuration
+
 - Update .gitignore
 - Ignore zcompdump
 - Update git attributes
@@ -27,7 +33,6 @@ All notable changes to this project will be documented in this file.
 - Encrypt todoist configuration
 - Tweak profile xdg envvars
 - Update azure configs
-- Add .gitattributes to wsl dir
 - Add .gitattributes to wsl dir
 
 ### Documentation
@@ -98,7 +103,6 @@ All notable changes to this project will be documented in this file.
 - Add git-cliff configurations
 - Add git-cliff config and create CHANGELOG.md
 - Add git-cliff GH action
-- Enhance CHANGELOG with doctoc TOC
 - Enhance CHANGELOG with doctoc TOC
 
 ### Miscellaneous Tasks

@@ -1,4 +1,5 @@
 {
+  "binary": "/mnt/c/users/jimmy/appdata/local/Microsoft/WindowsApps/MicrosoftEdge.exe",
   "provider": "bing",
   "customProviders": [
     {
@@ -194,6 +195,14 @@
       "tags": [
         "dev",
         "design"
+      ]
+    },
+    {
+      "name": "pypi",
+      "url": "https://pypi.org/search/?q=%s",
+      "tags": [
+        "dev",
+        "python"
       ]
     }
   ]

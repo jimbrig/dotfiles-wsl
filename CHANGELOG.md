@@ -6,24 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
-- [[Unreleased]](#unreleased)
-  - [Configuration](#configuration)
-- [[1.0.0] - 2021-12-16](#100---2021-12-16)
-  - [Configuration](#configuration-1)
-  - [Documentation](#documentation)
-  - [Features](#features)
-  - [Miscellaneous Tasks](#miscellaneous-tasks)
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 *Generated with [DocToc](https://github.com/thlorenz/doctoc)*
 ## [Unreleased]
-
-### Configuration
-
-- Fix Github Actions
-
-## [1.0.0] - 2021-12-16
 
 ### Configuration
 
@@ -40,12 +28,14 @@ All notable changes to this project will be documented in this file.
 - Tweak profile xdg envvars
 - Update azure configs
 - Add .gitattributes to wsl dir
+- Add .gitattributes to wsl dir
 
 ### Documentation
 
 - Add README.md
 - Update README.md
 - Add release to clog
+- Update Changelog TOC with doctoc
 
 ### Features
 
@@ -110,6 +100,9 @@ All notable changes to this project will be documented in this file.
 - Add git-cliff config and create CHANGELOG.md
 - Add git-cliff GH action
 - Enhance CHANGELOG with doctoc TOC
+- Enhance CHANGELOG with doctoc TOC
+- Update s-search config to use windows edge.exe
+- Refactor scripts with proper permissions and syntax
 
 ### Miscellaneous Tasks
 
@@ -118,6 +111,7 @@ All notable changes to this project will be documented in this file.
 - Autopublish 2021-12-16T05:02:46Z
 - Autopublish 2021-12-16T05:04:38Z
 - Autopublish 2021-12-16T05:06:23Z
+- Autopublish 2021-12-16T05:08:06Z
 
 ### Refactor
 
